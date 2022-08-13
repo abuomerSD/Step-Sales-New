@@ -9,8 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="1182.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.SettingsController">
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsController">
    <children>
       <HBox layoutX="26.0" layoutY="66.0" prefHeight="499.0" prefWidth="777.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -62,7 +61,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="10.0" />
                      </font>
                   </CheckBox>
                   <CheckBox fx:id="cbPurchasePermission" layoutX="10.0" layoutY="118.0" mnemonicParsing="false" text="صلاحيات إدارة المشتروات">
@@ -70,7 +69,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="10.0" />
                      </font>
                   </CheckBox>
                   <CheckBox fx:id="cbInventoryPermission" layoutX="10.0" layoutY="118.0" mnemonicParsing="false" text="صلاحيات إدارة المخزون">
@@ -78,7 +77,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="10.0" />
                      </font>
                   </CheckBox>
                   <CheckBox fx:id="cbCustomersPermission" layoutX="10.0" layoutY="152.0" mnemonicParsing="false" text="صلاحيات إدارة العملاء و الموردين">
@@ -86,7 +85,7 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="10.0" />
                      </font>
                   </CheckBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

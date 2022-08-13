@@ -15,12 +15,14 @@ import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.stage.FileChooser;
@@ -87,8 +89,9 @@ public class AddProductController implements Initializable {
             File file = fileChooser.showOpenDialog(null);
             System.out.println(file.getPath());
             FileInputStream fileInput = new FileInputStream(new File(file.getPath()));
-
-            Task<Void> task = new Task<Void>() {
+            try
+            {
+                Task<Void> task = new Task<Void>() {
 
                 @Override
                 protected Void call() throws Exception {
@@ -105,12 +108,14 @@ public class AddProductController implements Initializable {
 
                         row = sheet.getRow(i);
                         //lbAddMultiProducts.setText("تم إضافة الصنف : "+ row.getCell(1).getStringCellValue());
-                        ps.setString(1, row.getCell(0).getStringCellValue());
-                        ps.setString(2, row.getCell(1).getStringCellValue());
+                        ps.setString(1, String.valueOf(row.getCell(0).getStringCellValue()));
+                        ps.setString(2, String.valueOf(row.getCell(1).getStringCellValue()));
                         ps.setDouble(3, row.getCell(2).getNumericCellValue());
                         ps.setDouble(4, row.getCell(3).getNumericCellValue());
                         ps.setDouble(5, row.getCell(4).getNumericCellValue());
                         ps.execute();
+                       
+                            
 
                 // ADDING PRODUCT MOVEMENT TO ITS TABLE
                         Product product = new Product();
@@ -154,9 +159,24 @@ public class AddProductController implements Initializable {
             Thread thread = new Thread(task);
             thread.setDaemon(true);
             thread.start();
+            }
+            catch(Exception ex)
+            {
+                Platform.runLater(() -> {
+                            AlertMaker.showErrorAlert(ex.getMessage());
+                        });
+                AlertMaker.showErrorAlert(ex.getMessage());
+                ex.printStackTrace();
+            }
+
+            
 
         } catch (Exception ex) {
-            AlertMaker.showErrorAlert(ex.getMessage());
+//            AlertMaker.showErrorAlert(ex.getMessage());
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText(ex.getMessage());
+            alert.show();
             ex.printStackTrace();
         }
 

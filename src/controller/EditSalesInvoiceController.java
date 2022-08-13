@@ -74,6 +74,7 @@ public class EditSalesInvoiceController extends InvoiceController implements Ini
         
         DatabaseHandler.editSalesInvoice(invoiceHeader, super.invoiceDetailsList);
         btnSaveInvoice.setDisable(true);
+        disableControls();
     }
     
     public void getOldInvoiceData(InvoiceHeader header){

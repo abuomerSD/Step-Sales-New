@@ -44,6 +44,7 @@ public class EditPurchaseInvoiceController extends PurchaseInvoiceController imp
         
         DatabaseHandler.editPurchaseInvoice(header, productsList);
         btnSaveInvoice.setDisable(true);
+        disableControls();
         
     }
     

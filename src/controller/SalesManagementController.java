@@ -41,7 +41,7 @@ public class SalesManagementController implements Initializable {
     @FXML
     private void showSalesInvoicesList(){
         StageShower stageShower = new StageShower();
-        stageShower.show("/view/sales_invoices_list.fxml", "فاتورة مبيعات", true);
+        stageShower.show("/view/sales_invoices_list.fxml", "قائمة فواتير المبيعات", true);
     }
     
     @FXML

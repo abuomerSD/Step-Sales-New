@@ -59,8 +59,8 @@ public class DatabaseHandler {
 //            String password = "";
             
             if(con == null)
-//                con = DriverManager.getConnection(url); //this is only for sqlite database
-                con = getMysqlConnection(); // this is only for mysql Connection
+                con = DriverManager.getConnection(url); //this is only for sqlite database
+//                con = getMysqlConnection(); // this is only for mysql Connection
 
             
         } catch (Exception ex) {

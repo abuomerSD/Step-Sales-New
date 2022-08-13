@@ -69,10 +69,10 @@ public class LoginController implements Initializable {
                     Stage oldStage = (Stage) txtUserName.getScene().getWindow();
                     oldStage.close();
                 }
-//                else
-//                {
-//                    AlertMaker.showErrorAlert("من فضلك ادخل بيانات المستخدم بصورة صحيحة");
-//                }
+                else
+                {
+                    AlertMaker.showErrorAlert("من فضلك ادخل بيانات المستخدم بصورة صحيحة");
+                }
             }
             
             

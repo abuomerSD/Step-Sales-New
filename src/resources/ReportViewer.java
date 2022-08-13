@@ -26,6 +26,7 @@ public class ReportViewer {
     public void showReport(String reportName, Map parameters, List reportFieldsDataList )
     {
         String reportURL = reportsPath + reportName ;
+      //parameters.put("logo","E:\\Step Sales\\img\\logo.png");
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(reportFieldsDataList);
         
         try
